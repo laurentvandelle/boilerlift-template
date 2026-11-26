@@ -2,6 +2,26 @@
 
 Workflows as code, delivered to n8n with [Boilerlift](https://github.com/laurentvandelle/boilerlift).
 
+## Install
+
+Do not clone or copy this template: always create a project from it with `lift init`. Requires Node.js 22.18 or later, and n8n 2.35.0 or later.
+
+**With an AI agent** (Claude Code, Cursor, Codex…): paste this prompt. It checks Node.js, runs `lift init`, connects the project to your n8n instance and deploys the example workflow as a draft, asking you one question at a time.
+
+```text
+Read https://raw.githubusercontent.com/laurentvandelle/boilerlift/main/docs/get-started.md
+and follow it to set up Boilerlift with me, one step at a time.
+```
+
+**By hand**:
+
+```sh
+npx boilerlift init my-n8n-workflows
+cd my-n8n-workflows
+```
+
+`lift init` never overwrites an existing file, never writes `.env` and never runs `npm install`. Then follow the next steps below. See [`lift init`](https://github.com/laurentvandelle/boilerlift/blob/main/docs/commands/init.md) and the [manual install](https://github.com/laurentvandelle/boilerlift/blob/main/docs/manual-install.md).
+
 ## Next steps
 
 1. Install the dependencies:
