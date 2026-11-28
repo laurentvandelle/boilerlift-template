@@ -167,9 +167,9 @@ function checkLift(args: string[]): SegmentCheck {
       ? undefined
       : { decision: 'ask', reason: 'lift reset without --dry-run is a Guarded command: it archives or deletes every workflow deployed on the target. Run it only after the user says yes in the chat.' };
   case 'deploy':
-    return !all && targets.length > 0 && targets.every((target) => target === 'dev')
+    return !all && targets.length > 0 && targets.every((target) => target === 'prod')
       ? undefined
-      : { decision: 'ask', reason: 'lift deploy without -t dev is a Guarded command: it may write to another n8n instance. Pass -t dev, or run it only after the user says yes in the chat.' };
+      : { decision: 'ask', reason: 'lift deploy without -t prod is a Guarded command: it may write to another n8n instance. Pass -t prod, or run it only after the user says yes in the chat.' };
   default:
     return undefined;
   }
