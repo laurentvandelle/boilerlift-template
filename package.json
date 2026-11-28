@@ -23,7 +23,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.0.0",
-    "boilerlift": "^0.2.0",
+    "boilerlift": "^0.3.0",
     "eslint": "^10.14.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-boundaries": "^7.4.2",
