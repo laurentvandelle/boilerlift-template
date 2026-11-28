@@ -30,7 +30,7 @@ flowchart LR
 <one or two sentences: what the workflow does, for whom>
 
 ### Scope
-- Workflow: `workflows/<name>.workflow.ts`, titled `<title in n8n>`, on target `dev`
+- Workflow: `workflows/<name>.workflow.ts`, titled `<title in n8n>`, on target `prod`
 - Trigger: <what starts it>
 - Inputs: <the data it receives>
 - Services & credentials: <each service, with its credential key>
@@ -68,7 +68,7 @@ flowchart LR
 Each morning, the sales channel in Slack gets the list of the customers Stripe created the day before.
 
 ### Scope
-- Workflow: `workflows/daily-new-customers.workflow.ts`, titled `Daily new customers`, on target `dev`
+- Workflow: `workflows/daily-new-customers.workflow.ts`, titled `Daily new customers`, on target `prod`
 - Trigger: every day at 8:00, Europe/Paris.
 - Inputs: the Stripe customers created the day before.
 - Services & credentials: Stripe (`stripe`), Slack (`slack`).

@@ -13,7 +13,7 @@ Keep n8n workflows as typed files under version control, and deliver them to one
 - `code/`: the JavaScript of Code nodes, one function per file, tested with Vitest. `package.json` maps `#code/*` to these files, so Node, TypeScript, ESLint and Vitest all resolve the same specifier.
 - `credentials/<target>.ts`: written by `lift creds sync`, the credentials each target's instance holds.
 - `boilerlift.lock.json`: written by `lift deploy`, the link between each stable name and its n8n id.
-- `scripts/n8n.ts`: `npm run n8n`, one call to the n8n public API of the dev target, tested with Vitest.
+- `scripts/n8n.ts`: `npm run n8n`, one call to the n8n public API of the prod target, tested with Vitest.
 - `.claude/`: the Agent kit for Claude Code. `skills/` holds the `BOILERLIFT:` skills; `hooks/guard.ts`, tested with Vitest and wired by `settings.json`, asks the user before each Guarded command and blocks reading `.env`.
 
 ## Boundaries

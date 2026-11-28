@@ -1,4 +1,4 @@
-// `npm run n8n -- <METHOD> <path> [body]`: one call to the n8n public API of the dev target, for what lift does not do
+// `npm run n8n -- <METHOD> <path> [body]`: one call to the n8n public API of the prod target, for what lift does not do
 // (read an execution, list tags…). It reads N8N_URL and N8N_API_KEY from the environment, then from .env, sends the
 // key in the X-N8N-API-KEY header, and prints the response body. It never prints the key.
 // The body is JSON, given as the third argument, or `-` to read it from stdin.

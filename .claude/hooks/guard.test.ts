@@ -11,7 +11,7 @@ function decision(input: unknown): string | undefined {
 
 describe('guard on lift', () => {
   test('should ask when the command publishes', () => {
-    const input = bash('npx lift publish --json --yes -t dev');
+    const input = bash('npx lift publish --json --yes -t prod');
 
     const result = decision(input);
 
@@ -19,7 +19,7 @@ describe('guard on lift', () => {
   });
 
   test('should ask when clean runs without --dry-run', () => {
-    const input = bash('npx lift clean --json --yes -t dev');
+    const input = bash('npx lift clean --json --yes -t prod');
 
     const result = decision(input);
 
@@ -27,7 +27,7 @@ describe('guard on lift', () => {
   });
 
   test('should ask when reset runs without --dry-run', () => {
-    const input = bash('npx lift reset --target dev --json --yes');
+    const input = bash('npx lift reset --target prod --json --yes');
 
     const result = decision(input);
 
@@ -35,7 +35,7 @@ describe('guard on lift', () => {
   });
 
   test('should let reset run when it is a dry run', () => {
-    const input = bash('npx lift reset --target dev --dry-run --json');
+    const input = bash('npx lift reset --target prod --dry-run --json');
 
     const result = decision(input);
 
@@ -50,8 +50,8 @@ describe('guard on lift', () => {
     expect(result).toBeUndefined();
   });
 
-  test('should let deploy run when it targets dev explicitly', () => {
-    const inputs = ['npx lift deploy -t dev --json', 'lift deploy --target dev', 'lift --target=dev deploy', 'npx lift -t dev deploy --dry-run --json'];
+  test('should let deploy run when it targets prod explicitly', () => {
+    const inputs = ['npx lift deploy -t prod --json', 'lift deploy --target prod', 'lift --target=prod deploy', 'npx lift -t prod deploy --dry-run --json'];
 
     const results = inputs.map((command) => decision(bash(command)));
 
@@ -67,7 +67,7 @@ describe('guard on lift', () => {
   });
 
   test('should ask when deploy targets another instance or every target', () => {
-    const inputs = ['npx lift deploy -t prod --json', 'npx lift deploy -t dev --all', 'npx lift deploy -t dev -t prod'];
+    const inputs = ['npx lift deploy -t dev --json', 'npx lift deploy -t prod --all', 'npx lift deploy -t prod -t dev'];
 
     const results = inputs.map((command) => decision(bash(command)));
 
@@ -91,7 +91,7 @@ describe('guard on lift', () => {
   });
 
   test('should let the read-only commands and help run', () => {
-    const inputs = ['npx lift ping --json', 'npx lift status --json -t dev', 'npx lift creds sync --json', 'npx lift publish --help', 'npm run verify'];
+    const inputs = ['npx lift ping --json', 'npx lift status --json -t prod', 'npx lift creds sync --json', 'npx lift publish --help', 'npm run verify'];
 
     const results = inputs.map((command) => decision(bash(command)));
 

@@ -4,7 +4,7 @@ import { defineConfig } from 'boilerlift';
 
 export default defineConfig({
   targets: {
-    dev: {
+    prod: {
       url: process.env.N8N_URL,
       apiKey: process.env.N8N_API_KEY,
       workflows: './workflows',

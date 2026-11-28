@@ -54,5 +54,5 @@ Make the deployed drafts live on n8n.
 Archive on n8n the workflows removed from the project.
 
 **Guarded command**:
-A command the agent runs only after the user's yes in the chat: `lift publish`, a real `lift clean` or `lift reset` (without `--dry-run`), a `lift deploy` that isn't `-t dev`, or an n8n API write (`npm run n8n` with a method other than `GET`). In Claude Code, the hook of `.claude/hooks/` asks the user to approve it once more.
+A command the agent runs only after the user's yes in the chat: `lift publish`, a real `lift clean` or `lift reset` (without `--dry-run`), a `lift deploy` that isn't `-t prod`, or an n8n API write (`npm run n8n` with a method other than `GET`). In Claude Code, the hook of `.claude/hooks/` asks the user to approve it once more.
 _Avoid_: dangerous command, protected action.
